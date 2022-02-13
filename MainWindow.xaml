@@ -1,0 +1,38 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+
+    <Grid >
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Left"   VerticalAlignment="Top" Orientation="Horizontal">
+            <StackPanel Name="Controls">
+                <TextBox Name="Number" Text="Номер" Margin="0,1" LostFocus="Number_LostFocus" GotFocus="Number_GotFocus" ></TextBox>
+                <TextBox Name="Mark" Text="Марка" Margin="0,1" LostFocus="Mark_LostFocus" GotFocus="Mark_GotFocus"></TextBox>
+                <TextBox Name="Failure" Text="Неисправность" Margin="0,1"></TextBox>
+                <Button Name="Add" Click="Add_Click" Width="126">Добавить</Button>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Background="Gray" Grid.Column="1">
+                <DataGrid Name="dg" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" >
+
+                </DataGrid>
+            </StackPanel>
+        </StackPanel>
+        <Button Name="GetFile" Content="Загрузить из файла" HorizontalAlignment="Left" Margin="0,132,0,0" VerticalAlignment="Top" Width="120" Click="GetFile_Click"/>
+        <TextBox Name="XMLPath"  HorizontalAlignment="Left" Height="42" Margin="0,85,0,0" TextWrapping="Wrap" Text="Путь" VerticalAlignment="Top" Width="120" GotFocus="XMLPath_GotFocus" LostFocus="XMLPath_LostFocus"  />
+    </Grid>
+
+</Window>
