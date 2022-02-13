@@ -101,7 +101,7 @@ namespace WpfApp1
                 }
                 dg.Items.Refresh();
             }
-            catch (FileNotFoundException)
+            catch (Exception)
             {
                 XMLPath.Text = "Файла не существует";
                 return;
