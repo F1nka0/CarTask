@@ -10,7 +10,10 @@
 
     <Grid >
 
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -25,9 +28,8 @@
         </StackPanel>
         <Button Name="GetFile" Content="Загрузить из файла" HorizontalAlignment="Left" Margin="0,132,0,0" VerticalAlignment="Top" Width="120" Click="GetFile_Click"/>
         <TextBox Name="XMLPath"  HorizontalAlignment="Left" Height="42" Margin="0,85,0,0" TextWrapping="Wrap" Text="Путь" VerticalAlignment="Top" Width="120" GotFocus="XMLPath_GotFocus" LostFocus="XMLPath_LostFocus"  />
-        <ScrollViewer HorizontalAlignment="Left"  Margin="131,10,0,0" VerticalAlignment="Top">
+        <ScrollViewer Grid.Column="1" HorizontalAlignment="Left"   VerticalAlignment="Top">
             <DataGrid  x:Name="dg" HorizontalAlignment="Left" VerticalAlignment="Top" />
         </ScrollViewer>
     </Grid>
-
 </Window>

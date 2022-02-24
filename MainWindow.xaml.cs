@@ -34,6 +34,16 @@ namespace WpfApp1
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
+            if (new Regex(@"[а-я]\d{3}[а-я]{2}").IsMatch(Number.Text)==false)
+            {
+                Number.Text = "Номер введён некорректно";
+                return;
+            }
+            if (new Regex(@"^([a-z]+|[а-я]+)$").IsMatch(Mark.Text)==false)
+            {
+                Mark.Text = "Марка введена некорректно";
+                return;
+            }
             if (IsFieldFilled(Number) == false | IsFieldFilled(Mark) == false)
             {
                 return;
