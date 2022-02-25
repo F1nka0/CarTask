@@ -8,11 +8,11 @@
         Title="MainWindow" Height="450" Width="800">
 
 
-    <Grid >
-
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -21,7 +21,7 @@
             <StackPanel Name="Controls">
                 <TextBox Name="Number" Text="Номер" Margin="0,1" LostFocus="Number_LostFocus" GotFocus="Number_GotFocus" ></TextBox>
                 <TextBox Name="Mark" Text="Марка" Margin="0,1" LostFocus="Mark_LostFocus" GotFocus="Mark_GotFocus"></TextBox>
-                <TextBox Name="Failure" Text="Неисправность" Margin="0,1"></TextBox>
+                <TextBox Name="Failure" LostFocus="Failure_LostFocus" GotFocus="Failure_GotFocus" Text="Неисправность" Margin="0,1"></TextBox>
                 <Button Name="Add" Click="Add_Click" Width="126">Добавить</Button>
             </StackPanel>
             <StackPanel Grid.Row="0" Background="Gray" Grid.Column="1"/>
@@ -31,5 +31,6 @@
         <ScrollViewer Grid.Column="1" HorizontalAlignment="Left"   VerticalAlignment="Top">
             <DataGrid  x:Name="dg" HorizontalAlignment="Left" VerticalAlignment="Top" />
         </ScrollViewer>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="291" Margin="0,0,-116,0" Width="166"><Run Text="Виды несправностей"/><Run Text=":"/><LineBreak/><Run Text="1 - "/><Run Text="мотор"/><LineBreak/><Run Text="2 - подвеска"/><LineBreak/><Run Text="3 - кузов"/><LineBreak/><Run Text="4 - система кондиционирования"/><LineBreak/><Run Text="5 - коробка передач"/><LineBreak/><Run Text="6 - электроника"/><LineBreak/><Run Text="7 - колёса"/><LineBreak/><Run Text="8 - фары"/><LineBreak/><Run Text="9 - тормоза"/></TextBlock>
     </Grid>
 </Window>
