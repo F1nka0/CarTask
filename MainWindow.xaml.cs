@@ -54,7 +54,7 @@ namespace WpfApp1
                 return;
             }
             else {
-                Cars.Add(new Car(Number.Text, Failure.Text, Mark.Text));
+                Cars.Add(new Car(Number.Text, new string(Failure.Text.Distinct().Aggregate("",(it,it2)=>it+" "+it2).ToArray()), Mark.Text));
                 dg.Items.Refresh();
             }
         }
@@ -117,7 +117,7 @@ namespace WpfApp1
                 foreach (string str in reader.ReadToEnd().Split('|')) {
                     CurrentCar = str.Split('@');
                     if ((AreAllInputsValid(str,CurrentCar.FirstOrDefault(), CurrentCar.LastOrDefault(), CurrentCar.Skip(1).FirstOrDefault()) ==false)) { XMLPath.Text = "Файл не валиден"; return; }
-                    tempCarList.Add(new Car(CurrentCar[0],CurrentCar[1].Aggregate("",(a,b)=>a+" "+b),CurrentCar[2]));
+                    tempCarList.Add(new Car(CurrentCar[0],CurrentCar[1].Distinct().Aggregate("",(a,b)=>a+" "+b),CurrentCar[2]));
                 }
                 Cars.AddRange(tempCarList);
                 tempCarList.Clear();
